@@ -29,7 +29,11 @@ async function handleUserLogin(req, res) {
     const token = setUser(user);
     res.cookie('token', token);
 
-    return res.redirect('/');
+    if(user.role === 'ADMIN') {
+        return res.redirect('/admin/urls');
+    } else {
+        return res.redirect('/');
+    }
 };
 
 module.exports = {

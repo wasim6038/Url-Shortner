@@ -4,18 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
+    <link rel="stylesheet" href="/css/auth.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Sign Up</h1>
-    <form action="/user" method="POST">
-        <label>Full Name</label>
-        <input type="text" name="name" required>
-        <label>Email</label>
-        <input type="text" name="email" required>
-        <label>Password</label>
-        <input type="text" name="password" required>
-
-        <button type="submit">SignUp</button>
-    </form>
+    <div class="stars"></div>
+    <div class="auth-container">
+        <form class="auth-card" action="/user" method="POST">
+            <h2 class="gradient-text">Create an account</h2>
+            <label>Full Name</label>
+            <input type="text" name="name" required placeholder="Enter your full name">
+            <label>Email</label>
+            <input type="email" name="email" required placeholder="Enter your email">
+            <label>Password <span class="forgot"><a href="#">Forgot ?</a></span></label>
+            <input type="password" name="password" required placeholder="Enter your password">
+            <button class="cta" type="submit">Create account</button>
+            <div class="footer-text">
+                Already Have An Account ? <a href="/login">Log In</a>
+            </div>
+        </form>
+    </div>
 </body>
 </html>

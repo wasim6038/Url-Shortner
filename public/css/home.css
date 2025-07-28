@@ -1,0 +1,237 @@
+body {
+    background: #10131c;
+    height: auto;
+    min-height: 100vh;
+    font-family: 'Montserrat', Arial, sans-serif;
+    overflow-y: auto;
+}
+
+.home-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 60px 0 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #b16cea;
+    letter-spacing: 1px;
+    user-select: none;
+}
+
+.header-actions {
+    display: flex;
+    gap: 18px;
+}
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(24, 26, 38, 0.7);
+    border-radius: 16px;
+    padding: 8px 18px;
+}
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #2563eb;
+    background: #fff;
+}
+.user-name {
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+}
+.user-menu {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #23263a;
+  border-radius: 8px;
+  padding: 10px 16px;
+  box-shadow: 0 2px 8px #0005;
+  display: none;
+  z-index: 1000;
+}
+
+.dropdown-menu a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.dropdown-menu a:hover {
+  text-decoration: underline;
+}
+
+
+.main-content {
+    max-width: 700px;
+    margin: 60px auto 0 auto;
+    background: rgba(24, 26, 38, 0.98);
+    border-radius: 24px;
+    box-shadow: 0 0 40px 10px #2b2e4a33, 0 0 0 1px #222;
+    padding: 48px 36px 32px 36px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.main-title {
+    font-size: 2.3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 0.01em;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #b16cea 0%, #ff5e69 30%, #ff8a56 60%, #ffa84b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    color: #bdbdbd;
+    font-size: 1.1rem;
+    margin-bottom: 32px;
+}
+
+.shorten-form {
+    margin-bottom: 24px;
+}
+
+.input-group {
+    display: flex;
+    align-items: stretch;
+    background: #181a26;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #2222;
+    padding: 0;
+    max-width: 520px;
+    margin: 0 auto 24px auto;
+    width: 100%;
+}
+
+.input-group input[type="text"] {
+    flex: 1 1 0%;
+    min-width: 0;
+    background: #23263a;
+    border: none;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 0 18px;
+    border-radius: 12px 0 0 12px;
+    outline: none;
+    height: 54px;
+    box-sizing: border-box;
+}
+
+.input-group .submitUrl {
+    border-radius: 0 12px 12px 0;
+    font-size: 1.1rem;
+    padding: 0 32px;
+    height: 54px;
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    box-shadow: none;
+    margin: 0;
+    white-space: nowrap;
+    min-width: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.input-group .submitUrl:hover {
+    background: #1d4ed8;
+}
+
+.short-url-box {
+    margin: 18px auto 0 auto;
+    background: #181a26;
+    border-radius: 10px;
+    padding: 12px 18px;
+    color: #fff;
+    font-size: 1.05rem;
+    display: inline-block;
+    box-shadow: 0 2px 8px #2222;
+}
+.short-url-box a {
+    color: #4285f4;
+    text-decoration: none;
+    margin-left: 8px;
+    font-weight: 600;
+}
+.short-url-box a:hover {
+    text-decoration: underline;
+}
+
+.table-container {
+    margin-top: 36px;
+    overflow-y: auto;
+    max-height: 60vh;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #181a26;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px #2222;
+}
+
+.styled-table th, .styled-table td {
+    padding: 14px 16px;
+    text-align: left;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.styled-table th {
+    background: #23263a;
+    color: #bdbdbd;
+    font-weight: 700;
+    border-bottom: 2px solid #23263a;
+}
+
+.styled-table tr {
+    border-bottom: 1px solid #23263a;
+}
+
+.styled-table tr:last-child {
+    border-bottom: none;
+}
+
+.styled-table td.truncate {
+    max-width: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.styled-table a {
+    color: #4285f4;
+    text-decoration: none;
+    word-break: break-all;
+}
+.styled-table a:hover {
+    text-decoration: underline;
+}
