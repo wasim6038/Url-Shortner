@@ -10,7 +10,6 @@ const userRoute = require('./routes/user');
 const { checkForAuthentication, restrictTo } = require('./middleware/auth')
 
 const app = express();
-const PORT = 8001;
 
 connectMongoDb('mongodb://localhost:27017/short-url')
 .then(() => console.log('MongoDB Connected'));
@@ -28,4 +27,4 @@ app.use('/url', restrictTo(["NORMAL", "ADMIN"]), urlRoute);
 app.use('/user', userRoute);
 app.use('/', staticRoute);
 
-app.listen(PORT, () => console.log('Server Started'))
+module.exports = app;
