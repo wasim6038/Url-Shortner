@@ -9,6 +9,7 @@ router.get('/admin/urls', restrictTo(["ADMIN"]), async (req, res) => {
     return res.render('home', {
         urls: allUrls,
         user: req.user,
+        baseUrl: process.env.BASE_URL || 'http://localhost:3000'
     });
 });
 
@@ -18,6 +19,7 @@ router.get('/', restrictTo(["NORMAL", "ADMIN"]), async (req, res) => {
     return res.render('home', {
         urls: allUrls,
         user: req.user,
+        baseUrl: process.env.BASE_URL || 'http://localhost:3000'
     });
 });
 
