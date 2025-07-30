@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
+const serverless = require('serverless-http');
 
 const connectToDB = require('./connect');
 
@@ -26,4 +27,4 @@ app.use('/url', restrictTo(["NORMAL", "ADMIN"]), urlRoute);
 app.use('/user', userRoute);
 app.use('/', staticRoute);
 
-module.exports = app;
+module.exports = serverless(app);
