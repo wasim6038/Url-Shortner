@@ -3,7 +3,7 @@ const URL = require('../models/url');
 
 async function generateNewShortUrl(req, res) {
     const body = req.body;
-    if(!body.url){ return res.status(400).json({ error: 'url is required'}) }
+    if (!body.url) { return res.status(400).json({ error: 'url is required' }) }
     const shortId = shortid.generate();
 
     await URL.create({
@@ -25,19 +25,26 @@ async function redirectShortUrl(req, res) {
             shortId
         },
         {
-            $push: { 
+            $push: {
                 viewHistory: { timeStamp: Date.now() }
             }
         }
     );
+
+    if (!entry) {
+        return res.status(404).send('Short URL not found');
+    }
+
     res.redirect(entry.redirectUrl);
 }
 
 async function getAnalytics(req, res) {
     const shortId = req.params.shortid;
     const result = await URL.findOne({ shortId });
-    return res.json({ totalClicks: result.viewHistory.length,
-        analytics: result.viewHistory})
+    return res.json({
+        totalClicks: result.viewHistory.length,
+        analytics: result.viewHistory
+    })
 }
 
 module.exports = {

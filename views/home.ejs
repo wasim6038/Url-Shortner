@@ -55,12 +55,20 @@
           <%= baseUrl %>/url/<%= id %>
         </a>
       </div>
+      <script>
+        alert("URL generated successfully! You will be redirected to the home page in 10 seconds.");
+        // Automatically redirect to /home after 10 seconds
+        setTimeout(() => {
+          window.location.href = "/";
+        }, 10000); // 10000 ms = 10 seconds
+      </script>
       <% } %> <% if (locals.urls) { %>
       <div class="table-container">
         <table class="styled-table">
           <thead>
             <tr>
               <th>S. No.</th>
+              <th>Created By</th>
               <th>Short Link</th>
               <th>Original Link</th>
               <th>Clicks</th>
@@ -70,6 +78,7 @@
             <% urls.forEach((url, index) => { %>
             <tr>
               <td><%= index + 1 %></td>
+              <td><%= url.createdBy.name || "Unknown User" %></td>
               <td>
                 <a href="<%= baseUrl %>/url/<%= url.shortId %>" target="_blank">
                   <%= baseUrl %>/url/<%= url.shortId %>
