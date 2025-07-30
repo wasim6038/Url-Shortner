@@ -13,7 +13,8 @@ async function generateNewShortUrl(req, res) {
         createdBy: req.user._id,
     })
     return res.render('home', {
-        id: shortId
+        id: shortId,
+        baseUrl: process.env.BASE_URL || "http://localhost:3000"
     })
 };
 

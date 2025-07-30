@@ -1,6 +1,6 @@
 // const sessionIdToUserMap = new Map();  // use for statefull auth
 const jwt = require('jsonwebtoken') ;  // use for stateless auth
-const secret = 'wasimafervrf'
+const secret = process.env.JWT_SECRET;
 
 // Use stateless auth
 function setUser(user){

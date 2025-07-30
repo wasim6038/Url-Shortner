@@ -51,8 +51,8 @@
       <% if (locals.id) { %>
       <div class="short-url-box">
         <span>URL Generated:</span>
-        <a href="http://localhost:8001/url/<%= id %>" target="_blank">
-          http://localhost:8001/url/<%= id %>
+        <a href="<%= baseUrl %>/url/<%= id %>" target="_blank">
+          <%= baseUrl %>/url/<%= id %>
         </a>
       </div>
       <% } %> <% if (locals.urls) { %>
@@ -72,7 +72,7 @@
               <td><%= index + 1 %></td>
               <td>
                 <a href="/url/<%= url.shortId %>" target="_blank">
-                  <%= "http://localhost:8001/url/" + url.shortId %>
+                  <%= "<%= baseUrl %>/url/" + url.shortId %>
                 </a>
               </td>
               <td class="truncate">
