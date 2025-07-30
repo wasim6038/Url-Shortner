@@ -1,9 +1,10 @@
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
-const serverless = require('serverless-http');
+require('dotenv').config();
 
 const connectToDB = require('./connect');
+const PORT = process.env.PORT || 3000;
 
 const staticRoute = require('./routes/staticRoute')
 const urlRoute = require('./routes/url');
@@ -27,4 +28,6 @@ app.use('/url', restrictTo(["NORMAL", "ADMIN"]), urlRoute);
 app.use('/user', userRoute);
 app.use('/', staticRoute);
 
-module.exports = serverless(app);
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
